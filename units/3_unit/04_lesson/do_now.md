@@ -1,61 +1,51 @@
 # Do Now 3.04
 
-## Quiz Announcement
+## Example 1
 
-We will have a quiz next class covering all of the above topics.
+### Write down in your notebook:
 
-### Discussion
+* How would you print out something 10 times? What about 100? What about 1,000?
 
-Is there any topic you would like to focus on and cover more of?
-
-### In your notebook
-
-Rank the following from easiest to hardest:
-
-A. Importing built-in functions
-B. Using `randint`
-C. Abstraction/creating functions
-D. Passing `int/str/float/bool` arguments into functions
-E. Calling a function
-F. List syntax
-G. Return vs print
-
-### Type the following into the console
+### Open up the console, type the following code
 
 ```python
-    my_list = ['a', 'b', 'c', 'd']
+    while True:
+        print('a')
+ ```
 
-    # input: a list of strings
-    # output: None
-    def my_function(list_argument):
-        list_argument[0] = 'z'
-        print("Inside function: ", my_list)
+### In your notebook, write responses for the following:
 
-    print("Before function:", my_list)
-    my_function(my_list)
-    print("After function:", my_list)
-```
+1. What happens when you run this code?
+2. Try using other Boolean expressions instead of `True`.
+3. Using a `while` loop, how would you print out something 10 times? 100? 1000?
 
-1. What did the program output and what is this program doing?
+## Example 2
 
-### Bonus
-
-Try writing a similar program but passing in an integer, `my_int`, instead of a list, changing the integer variable inside the function. What happens?
-
-### Do Now, Part 2
-
-In your notebook, without running the following code, predict what its output will be:
+### Open up the console. Type and run the following code
 
 ```python
-    def double_print(input_string):
-        for i in range(2):
-            print(input_string)
- 
-    def double_concat(part1, part2):
-        concat = part1 + ", " + part2
-        double_print(concat)
- 
-    str1 = "Hello"
-    str2 = "world"
-    double_concat(str1, str2 + "!")
+    loopCounter = 0
+    while loopCounter < 10:
+        print('Hello World')
 ```
+
+### In your notebook, answer the following
+
+1. How many times will it print out?
+2. What is the output?
+
+## Example 3
+
+### In the console, add a line (#3 below) to your program:
+
+```python
+    loopCounter = 0
+    while loopCounter < 10:
+        loopCounter = loopCounter + 1
+        print('Hello World')
+```
+
+### In your notebook, answer the following:
+
+1. How many times will it print out?
+2. What is the output?
