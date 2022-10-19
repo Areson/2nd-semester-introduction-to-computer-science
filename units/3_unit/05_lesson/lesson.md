@@ -1,106 +1,106 @@
-# Lesson 3.05: project 3
+# Lesson 3.04: Debugging and Scope
 
-## Learning objectives
+## Learning Objectives
 
 Students will be able to...
 
-* Use project planning skills to complete a large project.
-* Create functions to organize a project.
-* Apply skills learned in units 1-3 to create a functioning program.
+* Define and identify **scope**, **aliasing**, **stack diagram**, **stack trace**.
+* Demonstrate that changing a list inside a function updates the list outside of the function.
+* Demonstrate that updating variables inside a function does **not** affect the variable outside of the function.
+* Demonstrate the use of global variables.
+* Draw a simple stack diagram.
 
-## Materials/preparation
+## Materials/Preparation
 
-* [3.05 Slide deck](https://github.com/Areson/2nd-semester-introduction-to-computer-science/raw/master/units/3_unit/slidedecks/Intro%20Python%203.05%20TEALS.pptx)
-* [Project spec - Oregon Trail][] ([docx][1]) ([pdf][2])
-* [Project spec - Cross-Country Canada][] ([docx][3]) ([pdf][4])
-* [Project spec - Daily Planner][] ([docx][5]) ([pdf][6])
-* [Oregon Trail starter code](https://github.com/Areson/2nd-semester-introduction-to-computer-science/raw/master/units/3_unit/05_lesson/Unit_3_Project_Oregon_Trail_Starter_Code.py)
-* [Cross-Country Canada starter code](https://github.com/Areson/2nd-semester-introduction-to-computer-science/raw/master/units/3_unit/05_lesson/Unit_3_Project_Cross_Country_Canada_Starter_Code.py/)
-* Solution (access protected resources by clicking on "Additional Curriculum Materials" on the [TEALS dashboard](https://www.tealsk12.org/dashboard/))
-* Update the _Project Spec_ as needed to meet your grading requirements.
-* Try creating your own variation on the Oregon Trail code so you are familiar with the potential challenges and bugs your students will hit.
-* Review [4 steps to solve any CS problem][]
-* [Editable grading rubric](https://github.com/Areson/2nd-semester-introduction-to-computer-science/raw/master/units/3_unit/05_lesson/rubric.docx)
+* [3.04 Slide Deck](https://github.com/Areson/2nd-semester-introduction-to-computer-science/raw/master/units/3_unit/slidedecks/Intro%20Python%203.04%20TEALS.pptx)
+* [Do Now][]
+* [Lab - Aliasing & Scope][] ([docx][]) ([pdf][])
+* Read through the Do Now, lesson, and lab so that you are familiar with the requirements and can assist students.
+* [Associated Readings 3.4](https://tealsk12.github.io/2nd-semester-introduction-to-computer-science/readings.md#associatedreadings/3.4)
 
-### Day 1
+## Pacing Guide
 
 | **Duration** | **Description** |
-| ----------  | -----------      |
-| 10 Minutes  | Project Overview |
-| 40 Minutes  | Planning         |
-| 5 Minutes   | Debrief          |
+| ----------   | -----------     |
+| 5 Minutes    | Do Now          |
+| 20 Minutes   | Lesson          |
+| 20 Minutes   | Lab/Review      |
+| 10 Minutes   | Debrief         |
 
-#### Days 2-9
+## Instructor's Notes
 
-|**Duration** | **Description**  |
-|-----------  | ---------------- |
-| 5 Minutes   | Review Day Plan  |
-| 45 Minutes  | Project Work     |
-| 5 Minutes   | Debrief          |
+### 1. Do Now
 
-## Instructor's notes
+* Students have a chance to think about what & discuss what concepts they have been most challenged by.
+* Next, students practice passing a list as an argument and updating that list within the function.
 
-### 1. 4 steps to solve any CS problem
+### 2. Lesson
 
-* Remind students of the [4 steps to solve any CS problem].
+* Discuss what students observed in the Do Now and take time, if needed, to go over questions about concepts that students find challenging.
 
-### 2. Project overview
+#### Aliasing
 
-* Demo the finished project.
-* Give out the project spec and go over game rules.
+* Explain the concept of **aliasing**.
+* You can draw on the board a diagram of the variable pointing to a list.
+* Note that when passing the location of a list you are not passing the actual value, so the list can be changed.
+* **Video Explanation of Aliasing**:
 
-### 3. Planning
+    [![Python - aliasing](https://img.youtube.com/vi/7m_cw30tyr0/0.jpg)](https://www.youtube.com/watch?v=7m_cw30tyr0)
 
-1. Have students draw out the game play.
-2. Students should plan to create functions for each user interaction by figuring out where the repeated code will be.
-3. Students should list out which variables they will need.
-4. Have students plan out their next 7 days. Here is a suggested time line and checkpoints:
+#### Scope of functions
 
-    * Set up user inputs with dummy functions, make sure game loop works.
-    * Create variables necessary to run the game, start implementing basic functions.
-    * Focus on the random functions.
-    * Figure out how to move the days.
-    * Finish day updating.
-    * Connect functions together.
-    * Wrap up and game over check is correct.
+* Explain to students that variable scope is the part of a program where a variable is accessible.
+* A variable which is defined in the main body of a file is called a global variable.
 
-## Accommodation/differentiation
+* **Video explanation of Variable Scope**
 
-    * Advanced students can add in random events like cholera or snake bites.
-    * Students can also have a list of travelers instead of just 1, where each traveler is affected differently by each action.
-    * The planning phase of this project will be essential, especially for students who you think may struggle with this project.
-    * Provide more guidance and scaffolding to those students that need it.
+   [![Python - Scope](https://img.youtube.com/vi/A054Ged9suI/0.jpg)](https://youtu.be/A054Ged9suI)
 
-## Grading
+#### Global Variables, Constants and Local Variables
 
-### Objective scoring breakdown
+* Explain global variables are often used for constants.
+* Any variable created inside of a function is a local variable.
+* Variables in functions include the function parameters, the variables defined in the function, and variables declared as global.
+* Local variables of functions can't be accessed from outside when the function call has finished.
 
-[Editable grading rubric](https://github.com/Areson/2nd-semester-introduction-to-computer-science/raw/master/units/3_unit/05_lesson/rubric.docx)
+#### Conventions
 
-| Points | Percentage| Objective | Lesson |
-| :---: | :---: | --- | --- |
-| 3| 10% | Student correctly identifies data types|2.01|
-| 3 | 10% | Student correctly uses lists |2.04, 2.05|
-| 3 | 10% | Student correctly uses built in functions  | 3.01|
-| 12 | 38% |Student can program using user-defined functions |3.02, 3.03, 3.04|
-| 5| 16% |Student can decompose a problem to create a program from a brief||
-| 5| 16%|Student uses naming/ syntax conventions and comments to increase readability||
-| 31 | | **Total Points** ||
+* Discuss that programming languages frequently have **conventions**. It helps make code more readable, but isn't essential to functionality (in most cases).
+* Here are some examples:
+  * Function and variable names should be lowercase, with words separated by underscores as necessary to improve readability.
+    * [https://www.python.org/dev/peps/pep-0008/#function-and-variable-names](https://www.python.org/dev/peps/pep-0008/#function-and-variable-names)
+  * Constants are usually defined on a module level and written in all capital letters with underscores separating words. Examples include MAX_OVERFLOW and TOTAL.
+    * [https://www.python.org/dev/peps/pep-0008/#constants](https://www.python.org/dev/peps/pep-0008/#constants)
+  
+#### Stack Diagrams
 
-### Scoring consideration
+* Demonstrate how to draw the Stack Diagrams shown in the course book ([found in section 3.4](https://tealsk12.gitbook.io/intro-cs-2/readings#stack-diagrams)) and explain how they show the scope of variables as they related to functions.
+* Point out the error messages that will occur if you use a variable out of its scope.
 
-You may need to adjust the points in order to fit your class. Treat the percentages as a guide to determine how to weight the objectives being assessed.
+#### Stack Traces
 
-[Project spec - Oregon Trail]:project.md
-[Project spec - Daily Planner]:alternate_project.md
-[Project spec - Cross-Country Canada]:project_canada.md
-[Oregon Trail - Example code]:oregon_trail.py
-[TEALS dashboard]:http:/www.tealsk12.org/dashboard
-[4 steps to solve any CS problem]:https://github.com/TEALS-IntroCS/2nd-semester-introduction-to-computer-science-principles/raw/master/units/4%20Steps%20to%20Solve%20Any%20CS%20Problem.pdf
+* Show an example of a stack trace for a simple error in the Do Now Part 2 sample code.
+* The error message shows evidence of how Python keeps track a "stack" of functions, each one calling the next one, so that it can make available only the variables that are in scope in the current function.
 
-[1]: https://github.com/Areson/2nd-semester-introduction-to-computer-science/raw/master/units/3_unit/05_lesson/project.docx
-[2]: https://github.com/Areson/2nd-semester-introduction-to-computer-science/raw/master/units/3_unit/05_lesson/project.pdf
-[3]: https://github.com/Areson/2nd-semester-introduction-to-computer-science/raw/master/units/3_unit/05_lesson/project_canada.docx
-[4]: https://github.com/Areson/2nd-semester-introduction-to-computer-science/raw/master/units/3_unit/05_lesson/project_canada.pdf
-[5]: https://github.com/Areson/2nd-semester-introduction-to-computer-science/raw/master/units/3_unit/05_lesson/projecta.docx
-[6]: https://github.com/Areson/2nd-semester-introduction-to-computer-science/raw/master/units/3_unit/05_lesson/projecta.pdf
+#### Debugging
+
+* Help students follow their program to understand how the code is working.
+* Explain how the use of print statements throughout your code can let you know where in the program things are not operating as expected.
+
+### 3. Lab
+
+* This lab has students running code that gets them thinking about aliasing and scope. They must also create a stack diagram for a program to show their understanding of scope.
+
+### 4. Debrief
+
+* Take time to review the concepts covered today: **scope**, **aliasing**, and **stack diagrams**.
+* Call a few students to the board to draw their stack diagrams from the lab and talk through them.
+
+## Accommodation/Differentiation
+
+If students are moving quickly, they can look ahead at the project spec or research the game Oregon Trail for context.
+
+[Do Now]:do_now.md
+[Lab - Aliasing & Scope]:lab.md
+[pdf]: https://github.com/Areson/2nd-semester-introduction-to-computer-science/raw/master/units/3_unit/04_lesson/lab.pdf
+[docx]: https://github.com/Areson/2nd-semester-introduction-to-computer-science/raw/master/units/3_unit/04_lesson/lab.docx
